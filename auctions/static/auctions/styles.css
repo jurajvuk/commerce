@@ -1,3 +1,24 @@
 body {
     padding: 10px;
 }
+
+.listing-image {
+    width: 10em;
+    height:20em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.listing-list {
+    display: flex;
+    border: 1px solid black;
+    
+}
+
+.list-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

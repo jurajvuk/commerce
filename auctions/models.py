@@ -14,6 +14,7 @@ class Category(models.Model):
 
 class Listing(models.Model):
     title = models.CharField(max_length=50)
+    image = models.CharField(max_length=255, null=True)
     description = models.CharField(max_length=255)
     starting_bid = models.FloatField(null=True)
     image_url = models.CharField(max_length=255, blank=True)

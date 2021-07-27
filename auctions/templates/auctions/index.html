@@ -2,11 +2,15 @@
 
 {% block body %}
     <h2>Active Listings</h2>
-    <ul>
+    <ul class="listing-list">
     {% for item in items %}
-        <li>{{item.title}}</li>
-        <li>Price: ${{item.starting_bid}}</li>
-        <li>Created {{item.created}}</li>
+        <li><img class="listing-image" src="{{item.image}}" alt=""></li>
+        <div class="list-description">
+            <li>{{item.title}}</li>
+            <li>Price: ${{item.starting_bid}}</li>
+            <li>Created {{item.created}}</li>
+            <li>Seller: {{item.user}}</li>
+        </div>
     {% endfor %}
     </ul>
 {% endblock %}
