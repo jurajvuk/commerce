@@ -17,7 +17,6 @@ class Listing(models.Model):
     image = models.CharField(max_length=255, null=True)
     description = models.CharField(max_length=255)
     starting_bid = models.FloatField(null=True)
-    image_url = models.CharField(max_length=255, blank=True)
     category = models.ManyToManyField(Category, blank=True, related_name="category")
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     created = models.DateTimeField(default=timezone.now)
@@ -36,4 +35,7 @@ class Bid(models.Model):
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     listing = models.ForeignKey(Listing, null=True, blank=True, on_delete=models.SET_NULL)
 
+class Watchlist(models.Model):
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    listing = models.ForeignKey(Listing, null=True, blank=True, on_delete=models.SET_NULL)
 
